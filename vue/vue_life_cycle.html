@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Life Cycle</title>
+</head>
+<body>
+    <div id="app">{{msg}}</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello world'
+            },
+            beforeCreate () {
+                console.log('--beforeCreate--', 'el:', this.$el, 'msg', this.msg)
+                // alert('beforeCreate')
+            },
+            created () {
+                console.log('--created--', 'el:', this.$el, 'msg', this.msg)
+                // alert('created')
+            },
+            beforeMount () {
+                console.log('--beforeMount--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('beforeMount')
+            },
+            mounted () {
+                console.log('--mounted--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('mounted')
+            },
+            beforeUpdate () {
+                console.log('--beforeUpdate--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('beforeUpdate')
+            },
+            updated () {
+                console.log('--updated--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('updated')
+            },
+            beforeDestroy () {
+                console.log('--beforeDestroy--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('beforeDestroy')
+            },
+            watch: {
+                msg (){
+                    console.log('msg change')
+                }
+            },
+            destroyed () {
+                console.log('--destroyed--', 'el:', this.$el.toString(), 'msg', this.msg)
+                // alert('destroyed')
+            }
+        })
+        console.log(1111111111111)
+        vm.$nextTick(function () {
+            console.log(3333333333)
+        })
+        vm.msg = 'biu biu biu';
+        console.log(222222222)
+        // vm.$destroy();
+        console.log(444444444)
+    </script>
+</body>
+</html>

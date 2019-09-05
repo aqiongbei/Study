@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue component</title>
+</head>
+<body>
+    <div id="app">
+        <hello :hello='hello' :world='world'></hello>
+    </div>
+    <template id="temp_hallo">
+        <h2>{{hello}}
+            <world :world='world' @world='sayChildWorld'></world>
+        </h2>
+    </template>
+    <template id="temp_world">
+        <h1 @click="sayWorld">{{world}}</h1>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    hello: 'hello',
+                    world: 'world'
+                }
+            },
+            components: {
+                hello: {
+                    props: ['hello', 'world'],
+                    template: '#temp_hallo',
+                    components: {
+                        world: {
+                            props: ['world'],
+                            template: '#temp_world',
+                            methods: {
+                                sayWorld () {
+                                    this.$emit('world', this.world)
+                                }
+                            }
+                        }
+                    },
+                    methods: {
+                        sayChildWorld (world) {
+                            console.log('say world: ', world)
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

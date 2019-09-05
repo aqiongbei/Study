@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue is</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="currentPage = 'index'">index</button>
+        <button @click="currentPage = 'list'">list</button>
+        <button @click="currentPage = 'about'">about</button>
+        <component :is="currentPage"></component>
+    </div>
+    <template id="index">
+        <h1>index page</h1>
+    </template>
+    <template id="list">
+        <h1>list page</h1>
+    </template>
+    <template id="about">
+        <h1>about page</h1>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                currentPage: 'index'
+            },
+            components: {
+                index: {
+                    template: '#index'
+                },
+                list: {
+                    template: '#list'
+                },
+                about: {
+                    template: '#about'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

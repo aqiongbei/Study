@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 从入门到放弃</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+    <div id="app">
+        <p v-for="value in msg" @click="showInfo({value})">{{value.text}}</p>
+        <p v-once>{{title}}</p>
+        <ul>
+            <todo-item v-for="item of msg" :todo="item.text"></todo-item>
+        </ul>
+        <url-item :url="url.url" :title="url.title" :content="url.content" :cb="showInfo"></url-item>
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{todo}}</li>'
+        })
+
+        Vue.component('url-item', {
+            props: ['url', 'title', 'content', 'cb'],
+            template: '<a :href="url" :title="title" @click="cb">{{content}}</a>'
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                show: true,
+                currentTime: 0,
+                title: 'Vue 从入门到放弃',
+                msg: [{ text: '学习 JavaScript' },
+                      { text: '学习 Vue' },
+                      { text: '整个牛项目' }],
+                url: {
+                    url: 'http://www.baidu.com',
+                    title: 'hi! this is baidu url',
+                    content: 'This is baidu url'
+                }
+            },
+            methods: {
+                showInfo: function (val) {
+                    console.log(val.value.text)
+                }
+            },
+            computed: {
+                currentTime: function () {
+                    var nowTime = new Date();
+                    // return nowTime
+                },
+                lastTime: function () {
+                    return 86400 - this.currentTime;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
