@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择城市</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="./css/choose_city.css">
+	<script src="./js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="city-picker"></div>
+	<script src="./js/choose_city.js"></script>
+	<script src="./js/city_list.js"></script>
+	<script>
+		$(".city-picker").CityPicker({hotCities: hotCities, cities: cities});
+	</script>
+</body>
+</html>

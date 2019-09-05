@@ -1,0 +1,66 @@
+<div class="container">
+    <form action="" class="form-horizontal col-md-10">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <span ng-show='flag'>{{book.bookName}}</span>
+                    <span ng-show='flag' class="pull-right">分类:{{book.bookCate}}</span>
+                    <div class="form-group has-default has-feedback" ng-hide='flag'>
+                        <label class="control-label col-sm-2" for="inputGroupSuccess2">书名</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+                                <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookName' required>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                            <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <img ng-show='flag' src="" alt="" ng-src="{{book.bookCover}}" style="width: 40%;height: auto">
+                    <div class="form-group has-default has-feedback" ng-hide='flag'>
+                        <label class="control-label col-sm-2" for="inputGroupSuccess2">封面图链接</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-link"></span></span>
+                                <input type="url" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookCover' required>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                            <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span ng-show='flag'>价格:{{book.bookPrice}}</span>
+                    <div class="form-group has-default has-feedback" ng-hide='flag'>
+                        <label class="control-label col-sm-2" for="inputGroupSuccess2">价格</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                                <input type="number" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookPrice' required>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                            <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                    <div class="form-group has-default has-feedback" ng-hide='flag'>
+                        <label class="control-label col-sm-2" for="inputGroupSuccess2">分类</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                                <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookCate'>
+                            </div>
+                            <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                            <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary center" ng-show='flag' ng-click='change()'>修改</button>
+                    <button class="btn btn-danger center" ng-show='flag' ng-click='remove()'>删除</button>
+                    <button class="btn btn-primary center" ng-hide='flag' ng-click='comfirm()'>确定</button>
+                    <button class="btn btn-warning center" ng-hide='flag' ng-click='cancle()'>取消</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

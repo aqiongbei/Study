@@ -1,0 +1,49 @@
+<div class="container col-md-offset-2 col-md-8">
+    <form class="form-horizontal col-md-10" ng-submit="add()">
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-4" for="inputGroupSuccess2">书名</label>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookName'>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-4" for="inputGroupSuccess2">封面图链接</label>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-link"></span></span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookCover'>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-4" for="inputGroupSuccess2">价格</label>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookPrice'>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-4" for="inputGroupSuccess2">分类</label>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" ng-model='book.bookCate'>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <button class="btn btn-success pull-right" type="submit">提交</button>
+    </form>
+</div>

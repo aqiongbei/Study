@@ -1,0 +1,59 @@
+<div class="container col-md-4 col-md-offset-4">
+    <form action="userReg" name="" role='form' method='POST' enctype='multipart/form-data' class="form-horizontal" ng-submit="register()" id="regForm">
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">用户名</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name='username' ng-model="user.name" required>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">密码</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </span>
+                    <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name='password' ng-model="user.password" required>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">邮箱</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </span>
+                    <input type="email" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name='email' ng-model="user.email" required>
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div>
+        <!-- <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">头像</label>
+            <div class="col-sm-9">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </span>
+                    <input type="file" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name='avatar' required file-model="avatar">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback text-success" aria-hidden="true"></span>
+                <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+            </div>
+        </div> -->
+        <div class="form-group pull-right">
+            <button class='btn btn-primary'>提交</button>
+        </div>
+    </form>
+</div>
